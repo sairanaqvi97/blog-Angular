@@ -1,0 +1,21 @@
+.header {
+   font-family: Verdana, Geneva, Tahoma, sans-serif ; 
+   background-color: rgb(237, 228, 100);
+   color: rgb(55, 13, 155);
+   text-align: center;
+   
+
+   .nav-list {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   list-style: none;
+
+   .link:hover {
+    color: rgb(106, 80, 255);
+    cursor: pointer;
+    font-weight: bold;
+
+   }
+   }
+}
