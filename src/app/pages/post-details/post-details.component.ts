@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { PostsService } from '../../services/posts.service';
 import { HeaderComponent } from '../../components/header/header.component';
-
-
+import Post from '../../Models/Post';
 
 @Component({
   selector: 'app-post-details',
@@ -13,25 +12,26 @@ import { HeaderComponent } from '../../components/header/header.component';
   styleUrl: './post-details.component.css'
 })
 export class PostDetailsComponent implements OnInit {
-  public postId?: any;
+  post: Post | undefined;
 
-  constructor(private route: ActivatedRoute, public route: PostsService) {
+  constructor(private route: ActivatedRoute, private postsService: PostsService) {}
 
-    ngOnInit(): void {
-      this.route.paramMap.subscribe(params => {
-        this.postId = +params.get('id')!;
-        this.loadPost();
-      });
-    }
-
-    loadPost(): void {
-      this.postService.getPostById(this.postId).subscribe(post => {
-        this.post = post;
-      });
-
-    }
-
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const id = Number(params.get('id'));
+      this.loadPost(id);
+    });
   }
 
+  loadPost(id: number): void {
+    this.postsService.getPostById(id).subscribe(
+      (post: Post) => {
+        this.post = post;
+      },
+      (error: any) => {
+        console.error('Error fetching post:', error);
+        // Handle error (e.g., show error message to user)
+      }
+    );
+  }
 }
-

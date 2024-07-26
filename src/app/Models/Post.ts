@@ -3,6 +3,6 @@ export default interface Post {
     title: string,
     text: string,
     author: string,
-    publishDate: string,
+    publishDate: Date,
 
 }

@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400;700&display=swap");
+
+.container {
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: #152f80;
+  color: #c5c5c5;
+  padding: 2rem;
+  text-align: center;
+}
+
+.header {
+  text-align: center;  background: linear-gradient(45deg, #64ffda, #3a7bd5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+
+}
+
+h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  color: #64ffda;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(100, 255, 218, 0.3);
+}
+
+p.subtitle {
+    font-family: "Orbitron", sans-serif;
+    font-size: 30px;
+}
+
+h2 {
+    color: #3a7bd5; 
+    background: linear-gradient(to right, #64ffff, #3a7bd5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+.about {
+    color: #0a192f;
+  }
+
+  .about-text {
+    color: #0a192f;
+  }
+
+section.intro {
+    background-color: #c5c5c5;
+    padding: 10px;
+    color: #152f80;
+    font-weight: 200;
+}
+
+
+.topics,
+.call-to-action {
+  margin-bottom: 3rem;
+}
+
+.topic-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.topic-item {
+  background-color: rgba(100, 255, 218, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.topic-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(100, 255, 219, 0.842);
+}
+
+.topic-item h3 {
+  color: #64ffda;
+  margin-bottom: 0.5rem;
+}
+
+.topic-item h3 :first-of-type
+
+.subscribe-button {
+  background-color: #64ffda;
+  color: #0a192f;
+  border: none;
+  padding: 2rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(100, 255, 218, 0.2);
+}
+
+.subscribe-button:hover {
+  background-color: #3a7bd5;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(58, 123, 213, 0.3);
+}
+
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .topic-list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -11,12 +11,13 @@ export class PostsService {
   readonly URL_API = 'https://my-json-server.typicode.com/mariogiron/blog-server/posts/';
 
   posts: Post[];
+  getPostById: any;
 
   constructor(private http: HttpClient) {
     this.posts = [];
   }
 
-  getAll() {
+  getAll(): Observable<Post[]>  {
     return this.http.get<Post[]>(this.URL_API);
   }
 
