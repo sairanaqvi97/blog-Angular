@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import Post from '../Models/Post';
 import { Observable } from 'rxjs';
-
+import Post from '../Models/Post';
 
 @Injectable({
   providedIn: 'root'
@@ -10,22 +9,17 @@ import { Observable } from 'rxjs';
 export class PostsService {
   readonly URL_API = 'https://my-json-server.typicode.com/mariogiron/blog-server/posts/';
 
-  posts: Post[];
-  getPostById: any;
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) {
-    this.posts = [];
-  }
-
-  getAll(): Observable<Post[]>  {
+  getAll(): Observable<Post[]> {
     return this.http.get<Post[]>(this.URL_API);
   }
 
-  getById(id: string) {
+  getPostById(id: number): Observable<Post> {
     return this.http.get<Post>(`${this.URL_API}${id}`);
   }
 
-  createPost(post: Post) {
+  createPost(post: Post): Observable<Post> {
     return this.http.post<Post>(this.URL_API, post);
   }
 }

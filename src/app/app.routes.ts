@@ -9,5 +9,6 @@ export const routes: Routes = [
     {path:'', component:HomeComponent},
     {path:'postList', component: PostListComponent},
     { path: 'createPost', component:CreatePostComponent },
-    {path: 'detail-post/:postid', component:PostDetailsComponent},
+    {path: 'post/:postid', component:PostDetailsComponent},
+
 ];
